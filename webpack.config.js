@@ -1,9 +1,12 @@
 const path = require('path');
 
+// 환경 변수에 따라 모드 설정 (기본값은 'production')
+const mode = process.env.NODE_ENV === 'development' ? 'development' : 'production';
+
 module.exports = [
   // Main process
   {
-    mode: 'development',
+    mode: mode,
     entry: './src/main/index.ts',
     target: 'electron-main',
     output: {
@@ -25,7 +28,7 @@ module.exports = [
   },
   // Renderer process
   {
-    mode: 'development',
+    mode: mode,
     entry: './src/renderer/index.tsx',
     target: 'electron-renderer',
     output: {

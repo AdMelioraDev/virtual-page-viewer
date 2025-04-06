@@ -17,7 +17,8 @@ function createWindow() {
   // 애플리케이션의 index.html 로드
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // 개발 환경에서는 개발자 도구 열기
+  // 개발 환경에서만 개발자 도구 열기
+  // process.env.NODE_ENV가 'production'이면 개발자 도구를 열지 않음
   if (process.env.NODE_ENV === 'development') {
     mainWindow.webContents.openDevTools();
   }

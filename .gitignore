@@ -5,10 +5,11 @@ yarn-error.log
 yarn-debug.log
 .pnp/
 .pnp.js
+package-lock.json
 
 # Build output
-dist/
 build/
+dist/
 
 # IDE and editors
 .idea/
@@ -34,3 +35,6 @@ yarn-error.log*
 # Misc
 .cache/
 coverage/
+
+# 배포 폴더
+release/

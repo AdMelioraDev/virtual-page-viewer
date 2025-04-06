@@ -7,7 +7,9 @@
     "start": "electron .",
     "dev": "concurrently \"webpack --config webpack.config.js --watch\" \"electron .\"",
     "build": "webpack --config webpack.config.js",
-    "package": "electron-builder"
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "package": "electron-builder",
+    "package:prod": "npm run build:prod && electron-builder"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
     "concurrently": "^8.0.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "electron": "^24.1.2",
     "electron-builder": "^23.6.0",
